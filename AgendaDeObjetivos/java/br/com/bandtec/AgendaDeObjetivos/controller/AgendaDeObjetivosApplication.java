@@ -1,4 +1,4 @@
-package br.com.bandtec.AgendaDeObjetivos;
+package br.com.bandtec.AgendaDeObjetivos.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
