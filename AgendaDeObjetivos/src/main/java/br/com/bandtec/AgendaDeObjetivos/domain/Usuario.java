@@ -1,5 +1,7 @@
 package br.com.bandtec.AgendaDeObjetivos.domain;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -16,6 +18,9 @@ public class Usuario {
 	@Embedded
 	private Credenciais credenciais;
 	
+	@OneToMany(mappedBy = "usuario")
+	private List<Objetivo> objetivo;
+	
 //	@Column(name="login")
 //	@JsonProperty
 //	private String login;
@@ -25,12 +30,12 @@ public class Usuario {
 //	private String senha;
 	
 	public Usuario() {}
-	
+//	
 //	public Usuario(String login, String senha) {
 //		this.login = login;
 //		this.senha = senha;
 //	}
-//
+
 	public Long getId() {
 		return id;
 	}

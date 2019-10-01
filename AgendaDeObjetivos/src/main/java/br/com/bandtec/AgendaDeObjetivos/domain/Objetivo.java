@@ -36,6 +36,11 @@ public class Objetivo {
 	@Column(name = "data_maxia_para_execucao")
 	private LocalDate dataMaximaParaExecucao;
 	
+	@ManyToOne
+	@JoinColumn(name="usuario_id")
+	private Usuario usuario;
+	
+	
 	public Objetivo() {}
 	
 	public Objetivo(String titulo, String descricao, LocalDate dataMaximaParaExecucao) {

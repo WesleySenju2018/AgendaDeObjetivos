@@ -34,7 +34,9 @@ public class LoginControllerTest {
 
 	@Test
 	public void loginComFalha() {
-		ResponseEntity<String> resposta = controller.loginUsuario(c)(new Credenciais("login", "senha"));
+		Credenciais c = new Credenciais("login", "senha");
+		Mockito.when(todosUsuarios.existe(c)).thenReturn(null);
+		ResponseEntity<String> resposta = controller.loginUsuario(c);
 		assertEquals(HttpStatus.UNAUTHORIZED, resposta.getStatusCode());
 		assertEquals("Erro", resposta.getBody());
 	}

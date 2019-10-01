@@ -33,8 +33,8 @@ public class LoginController {
 		
 		Usuario usuarioAutentica = todosUsuarios.existe(usuario);
 		if(usuarioAutentica == null) {
-			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("usuario não existe");
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Erro");
 		}
-		return ResponseEntity.ok("Usuario autenticado");
+		return ResponseEntity.ok("Sucesso");
 	}
 }
