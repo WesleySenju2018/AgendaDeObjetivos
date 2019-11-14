@@ -13,9 +13,9 @@ public interface TodosUsuarios extends JpaRepository<Usuario, Long>{
 	@Query("select u from Usuario u where u.credenciais = :credenciais")
 	public Usuario existe(@Param("credenciais") Credenciais credenciais);
 	
-	public List<Usuario> findByNameAndIdade(String nome, Integer idade);
+//	public List<Usuario> findByNameAndIdade(String nome, Integer idade);
 	
-//	@Query("select u from Usuario u where u.nome = :nome")
+	@Query("select u from Usuario u where u.nome = :nome")
 	public List<Usuario> findByName (String nome);
 	
 	@Query("select u from Usuario u where u.idade = :idade")
